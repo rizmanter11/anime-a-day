@@ -1,0 +1,13 @@
+{
+    "manifest_version":2,
+    "name": "Internet Speed Test",
+    "description": "Shows your current internet speed",
+    "version":"1.0",
+    "browser_action": {
+        "default_icon": "images.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}
