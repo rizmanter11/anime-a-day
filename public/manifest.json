@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Task tracker",
+  "name": "Anime a Day",
   "author": "Riz Manter",
   "version": "0.0.1",
-  "description": "Task tracking",
+  "description": "Receive random anime when you open new tab and can also search for anime",
   "icons": {
     "16": "logo192.png",
     "48": "logo512.png"
