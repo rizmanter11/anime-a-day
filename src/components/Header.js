@@ -35,18 +35,17 @@ function Header() {
 
   return (
     <header>
-      <h1>
-      <strong>Good </strong>
-			{wish}
-			</h1>
+    	<h1>
+    	Good&nbsp;
+		{wish}
+		</h1>
 
-			<div>
-				<h3>
-				{date}
-				<br />
-				{time}
-				</h3>
-			</div>
+		<div>
+			<h3><strong>{date}</strong>
+			<br />
+			{time}
+			</h3>
+		</div>
     </header>
   )
 }
