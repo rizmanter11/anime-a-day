@@ -10,30 +10,85 @@ header{
   padding-top:200px;
   padding-bottom:300px;
   background-color: black;
+  background-size: cover;
 }
 
 header h1{
-  color:#AAA;
+  color: white;
   font-size:50px;
   font-weight:400;
   text-align:center
 }
 
 header h3 strong{
-  color: white;
+  color: black;
+}
+
+.eveningc{
+  color: orange;
 }
 
 header h3{
-  color:#AAA;
+  color:white;
   font-size:36px;
   font-weight:400;
   text-align:center
+}
+
+.left {
+  float: left;
+  padding: 0 20px 20px 0;
+}
+
+.randani {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  background-color: #313131;
+  padding: 25px 50px 75px 100px
+}
+
+.randani a{
+  display:block;
+  padding:8px 16px;
+  text-align:center;
+  margin-bottom:16px;
+  color: rgb(48, 48, 48);
+  background-color:#EEE;
+  border-radius:10px;
+  text-decoration:none;
+  -webkit-transition:0.4s;
+  transition:0.4s
+}
+
+.randani a:hover{
+  background-color:black;
+  color: #AAA;
+}
+
+.randani h1{
+  padding-top: 120px;
+  padding-right: 50px;
+  color: #FFF;
+}
+
+.randani h3{
+  font-size: 2rem;
+}
+
+.randani p {
+  text-align: left;
+  overflow: hidden;
+  margin-top: 50px;
+  margin-left: 70px;
+  color: #FFF;
 }
 
 .content-wrap{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
+  background-color: #313131;
   padding: 25px 50px 75px 100px
 }
 
@@ -51,7 +106,7 @@ header h3{
 }
 
 .content-wrap aside nav h3{
-  color:#313131;
+  color:whitesmoke;
   font-size:24px;
   margin-bottom:16px
 }
@@ -71,7 +126,7 @@ header h3{
 }
 
 .content-wrap aside nav a:hover{
-  background-color:#313131;
+  background-color:black;
   color:#AAA
 }
 
@@ -137,7 +192,7 @@ header h3{
 }
 
 .content-wrap main .main-head .search-box input:focus,.content-wrap main .main-head .search-box input:valid{
-  background-color:#313131;
+  background-color:black;
   color:#FFF
 }
 
@@ -181,7 +236,7 @@ header h3{
 }
 
 .content-wrap main .anime-list .anime-card h3{
-  color:#313131
+  color: #EEE
 }
 
 .content-wrap main .anime-list .anime-card:hover figure img{

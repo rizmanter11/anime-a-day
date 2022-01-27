@@ -1,4 +1,7 @@
 import React from 'react';
+import morningI from "./morning.jpg";
+import afternoonI from "./afternoon.jpg";
+import eveningI from "./evening.jpg";
 
 export const useDate = () => {
 	const locale = 'en';
@@ -31,17 +34,30 @@ export const useDate = () => {
 };
 
 function Header() {
-  const { date, time, wish } = useDate();
+  let { date, time, wish } = useDate();
+
+  let backI = morningI;
+  let isEvening = (wish === `Evening, `)? true: false;
+
+  if(wish === `Afternoon, `){
+	  backI = afternoonI;
+  } else if(wish === `Evening, `){
+	  backI = eveningI;
+  }
+
+  console.log(isEvening);
 
   return (
-    <header>
+    <header style={{
+		backgroundImage: `url(${backI})`
+	  }}>
     	<h1>
     	Good&nbsp;
 		{wish}
 		</h1>
 
 		<div>
-			<h3><strong>{date}</strong>
+			<h3><strong className={isEvening ? 'eveningc':''}>{date}</strong>
 			<br />
 			{time}
 			</h3>

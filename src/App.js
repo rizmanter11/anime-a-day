@@ -17,7 +17,7 @@ const App = () => {
 	const todayNum = firstNum*secondNum;
 	
 	const getAnimeTop = async() => {
-		const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
+		const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/airing`)
 			.then(response => response.json());
 		
 		SetTopAni(temp.top.slice(0,5));
@@ -52,9 +52,7 @@ const App = () => {
 	useEffect(() => {
 		getRandAni();
 
-	}, []);
-
-	console.log(randAni);
+	});
 
 	return (
 		<div className="App">
