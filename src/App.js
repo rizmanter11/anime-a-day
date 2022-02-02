@@ -14,7 +14,8 @@ const App = () => {
 	const today = new Date();
 	const firstNum = today.getDate();
 	const secondNum = today.getMonth() + 1;
-	const todayNum = firstNum*secondNum;
+	const multiplier = new Date(today.getFullYear(), secondNum, 0).getDate();
+	const todayNum = firstNum + secondNum*multiplier;
 	
 	const getAnimeTop = async() => {
 		const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/airing`)
@@ -52,7 +53,7 @@ const App = () => {
 	useEffect(() => {
 		getRandAni();
 
-	});
+	}, []);
 
 	return (
 		<div className="App">

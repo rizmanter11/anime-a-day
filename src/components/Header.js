@@ -45,8 +45,6 @@ function Header() {
 	  backI = eveningI;
   }
 
-  console.log(isEvening);
-
   return (
     <header style={{
 		backgroundImage: `url(${backI})`
