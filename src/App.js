@@ -43,17 +43,23 @@ const App = () => {
 
 	}, []);
 
-	const getRandAni = async() => {
+	/*const getRandAni = async() => {
 		const temp = await fetch(`https://api.jikan.moe/v3/anime/${todayNum}`)
 			.then(response => response.json());
 		
 		SetRandAni(temp);
-	}
+	}*/
 
 	useEffect(() => {
-		getRandAni();
+		const getRandAni = async() => {
+			const temp = await fetch(`https://api.jikan.moe/v3/anime/${todayNum}`)
+				.then(response => response.json());
+			
+			SetRandAni(temp);
+		};
 
-	}, []);
+		getRandAni();
+	}, [todayNum]);
 
 	return (
 		<div className="App">

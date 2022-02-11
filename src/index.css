@@ -8,7 +8,7 @@
 
 header{
   padding-top:200px;
-  padding-bottom:300px;
+  padding-bottom:400px;
   background-color: black;
   background-size: cover;
 }
@@ -24,7 +24,7 @@ header h3 strong{
   color: black;
 }
 
-.eveningc{
+.contc{
   color: orange;
 }
 
@@ -45,12 +45,12 @@ header h3{
   display:-ms-flexbox;
   display:flex;
   background-color: #313131;
-  padding: 25px 50px 75px 100px
+  padding: 50px 50px 75px 100px
 }
 
 .randani a{
   display:block;
-  padding:8px 16px;
+  padding: 10px;
   text-align:center;
   margin-bottom:16px;
   color: rgb(48, 48, 48);
@@ -64,6 +64,10 @@ header h3{
 .randani a:hover{
   background-color:black;
   color: #AAA;
+}
+
+.randani a img {
+  height: 100%;
 }
 
 .randani h1{

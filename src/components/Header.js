@@ -2,6 +2,7 @@ import React from 'react';
 import morningI from "./morning.jpg";
 import afternoonI from "./afternoon.jpg";
 import eveningI from "./evening.jpg";
+import nightI from "./night.jpg"
 
 export const useDate = () => {
 	const locale = 'en';
@@ -22,7 +23,7 @@ export const useDate = () => {
   
 	const hour = today.getHours();
 
-	const wish = `${(hour < 12 && 'Morning') || (hour < 17 && 'Afternoon') || 'Evening'}, `;
+	const wish = `${(hour < 12 && 'Morning') || (hour < 17 && 'Afternoon') || (hour < 20 && 'Evening') || 'Night'}, `;
   
 	const time = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric' });
   
@@ -37,12 +38,15 @@ function Header() {
   let { date, time, wish } = useDate();
 
   let backI = morningI;
-  let isEvening = (wish === `Evening, `)? true: false;
+  let isNight = (wish === `Night, `)? true: false;
+  let isAfter = (wish === `Afternoon, `)? true: false;
 
   if(wish === `Afternoon, `){
 	  backI = afternoonI;
   } else if(wish === `Evening, `){
 	  backI = eveningI;
+  } else if(wish === `Night, `){
+	  backI = nightI;
   }
 
   return (
@@ -50,14 +54,18 @@ function Header() {
 		backgroundImage: `url(${backI})`
 	  }}>
     	<h1>
-    	Good&nbsp;
-		{wish}
+	  		<strong className={isAfter ? 'contc':''}>
+				Good&nbsp;
+				{wish}
+			</strong>
 		</h1>
 
 		<div>
-			<h3><strong className={isEvening ? 'eveningc':''}>{date}</strong>
-			<br />
-			{time}
+			<h3><strong className={isNight ? 'contc':''}>{date}</strong>
+				<br />
+				<strong className={isAfter ? 'contc':''}>
+					{time}
+				</strong>
 			</h3>
 		</div>
     </header>
