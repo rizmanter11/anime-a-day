@@ -49,6 +49,14 @@ function Header() {
 	  backI = nightI;
   }
 
+
+  let h3class = ''
+  if(isNight){
+	h3class = 'tnight'
+  } else if(isAfter){
+	h3class = 'contc'
+  }
+
   return (
     <header style={{
 		backgroundImage: `url(${backI})`
@@ -63,7 +71,7 @@ function Header() {
 		<div>
 			<h3><strong className={isNight ? 'contc':''}>{date}</strong>
 				<br />
-				<strong className={isAfter ? 'contc':''}>
+				<strong className={h3class}>
 					{time}
 				</strong>
 			</h3>

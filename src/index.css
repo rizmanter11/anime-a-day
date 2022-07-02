@@ -7,17 +7,21 @@
 }
 
 header{
-  padding-top:200px;
-  padding-bottom:400px;
+  height: 100vh;
   background-color: black;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 header h1{
   color: white;
   font-size:50px;
   font-weight:400;
-  text-align:center
+  text-align:center;
 }
 
 header h3 strong{
@@ -26,6 +30,10 @@ header h3 strong{
 
 .contc{
   color: orange;
+}
+
+.tnight{
+  color: white;
 }
 
 header h3{
@@ -44,11 +52,16 @@ header h3{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
+  flex-direction: column;
   background-color: #313131;
   padding: 50px 50px 75px 100px
 }
+.randcontent {
+  display: flex;
+  flex-direction: row;
+}
 
-.randani a{
+.randcontent a{
   display:block;
   padding: 10px;
   text-align:center;
@@ -71,8 +84,9 @@ header h3{
 }
 
 .randani h1{
-  padding-top: 120px;
-  padding-right: 50px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  text-align: center;
   color: #FFF;
 }
 
