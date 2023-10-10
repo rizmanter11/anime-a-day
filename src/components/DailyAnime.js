@@ -3,7 +3,7 @@ import React from 'react';
 function DailyAnime({ randAni }) {
   console.log(randAni)
   return (
-    <div>
+    <div className='randanibox'>
       {
         randAni.title != undefined &&
         <div className='randani'>
