@@ -62,7 +62,9 @@ header h3{
 }
 
 .randcontent a{
-  display:block;
+  display:flex;
+  flex-direction: column;
+  max-height: 600px;
   padding: 10px;
   text-align:center;
   margin-bottom:16px;
@@ -77,10 +79,6 @@ header h3{
 .randani a:hover{
   background-color:black;
   color: #AAA;
-}
-
-.randani a img {
-  height: 100%;
 }
 
 .randani h1{

@@ -11,17 +11,18 @@ const App = () => {
 	const [randAni, SetRandAni] = useState([]);
 	const [search, SetSearch] = useState("");
 
-	const today = new Date();
-	const firstNum = today.getDate();
-	const secondNum = today.getMonth() + 1;
-	const multiplier = new Date(today.getFullYear(), secondNum, 0).getDate();
-	const todayNum = firstNum + secondNum*multiplier;
-	
-	const getAnimeTop = async() => {
-		const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/airing`)
+	// const today = new Date();
+	// const firstNum = today.getDate();
+	// const secondNum = today.getMonth() + 1;
+	// const multiplier = new Date(today.getFullYear(), secondNum, 0).getDate();
+	// const todayNum = firstNum + secondNum*multiplier;
+
+	const fetchAnime = async(query) => {
+		const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${query}
+		&order_by=title&sort=asc&limit=10`)
 			.then(response => response.json());
-		
-		SetTopAni(temp.top.slice(0,5));
+		console.log('temp2',temp)
+		SetAniList(temp.data);
 	}
 
 	const handleSearch = e => {
@@ -30,36 +31,34 @@ const App = () => {
 		fetchAnime(search);
 	}
 
-	const fetchAnime = async(query) => {
-		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}
-		&order_by=title&sort=asc&limit=10`)
-			.then(response => response.json())
+	const getAnimeTop = async() => {
+		const temp = await fetch(`https://api.jikan.moe/v4/top/anime?filter=airing&page=1`)
+			.then(response => response.json());
+			console.log(temp)
+		SetTopAni(temp.data.slice(0,5));
+	}
 
-		SetAniList(temp.results);
+	const getRandAni = async() => {
+		const temp = await fetch(`https://api.jikan.moe/v4/random/anime`)
+			.then(response => response.json());
+		
+		SetRandAni(temp.data);
 	}
 
 	useEffect(() => {
 		getAnimeTop();
-
+		getRandAni();
 	}, []);
 
-	/*const getRandAni = async() => {
-		const temp = await fetch(`https://api.jikan.moe/v3/anime/${todayNum}`)
-			.then(response => response.json());
-		
-		SetRandAni(temp);
-	}*/
+	// useEffect(() => {
+	// 	const getRandAni = async() => {
+	// 		const temp = await fetch(`https://api.jikan.moe/v4/anime/${todayNum}`)
+	// 			.then(response => response.json())
+	// 		SetRandAni(temp.data);
+	// 	};
 
-	useEffect(() => {
-		const getRandAni = async() => {
-			const temp = await fetch(`https://api.jikan.moe/v3/anime/${todayNum}`)
-				.then(response => response.json());
-			
-			SetRandAni(temp);
-		};
-
-		getRandAni();
-	}, [todayNum]);
+	// 	getRandAni();
+	// }, [todayNum]);
 
 	return (
 		<div className="App">
