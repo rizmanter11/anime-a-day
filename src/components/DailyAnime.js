@@ -5,7 +5,7 @@ function DailyAnime({ randAni }) {
   return (
     <div className='randanibox'>
       {
-        randAni.title != undefined &&
+        randAni.title !== undefined &&
         <div className='randani'>
           <h1>Today's Random Anime</h1>
           <div className='randcontent'>
